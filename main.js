@@ -28,10 +28,15 @@ var OpenPaths = exports.OpenPaths = function(key, secret, version) {
         var querystring = QueryString.stringify(params),
             resource = endpoint + '?' + querystring;
         
+        console.log('Requested resource:asdasdas');
         console.log('Requested resource: ' + resource);
         
-        oauth.get(resource, '', '', callback);
-        
+		oauth.getOAuthAccessToken(key, secret, testfn);
+        // oauth.get(resource, '', '', callback);
     }
-    
+}
+
+function  testfn()
+{
+	console.log(211);
 }
